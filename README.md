@@ -1,4 +1,4 @@
-# caddy
+# Caddy
 
 A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](http://caddyserver.com/docs/git) plugin.  Plugins can be configured via the `plugins` build arg.
 
@@ -32,9 +32,9 @@ $ docker run -d \
 ```
 
 
-Here, `/root/.caddy` is the location *inside* the container where caddy will save certificates.
+Here, `/root/.caddy` is the location *inside* the container where Caddy will save certificates.
 
-Additionally, you can use an *environment variable* to define the exact location caddy should save generated certificates:
+Additionally, you can use an *environment variable* to define the exact location Caddy should save generated certificates:
 
 ```sh
 $ docker run -d \
