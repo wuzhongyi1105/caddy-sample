@@ -2,12 +2,17 @@
 
 A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](http://caddyserver.com/docs/git) plugin.  Plugins can be configured via the `plugins` build arg.
 
-[![](https://images.microbadger.com/badges/image/abiosoft/caddy.svg)](https://microbadger.com/images/abiosoft/caddy "Get your own image badge on microbadger.com")
 
+
+### Credit
+
+A bit thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
+
+[![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy)
 ## Getting Started
 
 ```sh
-$ docker run -d -p 2015:2015 abiosoft/caddy
+$ docker run -d -p 2015:2015 adriel/caddy
 ```
 
 Point your browser to `http://127.0.0.1:2015`.
@@ -23,7 +28,7 @@ $ docker run -d \
     -v $(pwd)/Caddyfile:/etc/Caddyfile \
     -v $HOME/.caddy:/root/.caddy \
     -p 80:80 -p 443:443 \
-    abiosoft/caddy
+    adriel/caddy
 ```
 
 
@@ -36,7 +41,7 @@ $ docker run -d \
     -e "CADDYPATH=/etc/caddycerts" \
     -v $HOME/.caddy:/etc/caddycerts \
     -p 80:80 -p 443:443 \
-    abiosoft/caddy
+    adriel/caddy
 ```
 
 Above, we utilize the `CADDYPATH` environment variable to define a different location inside the container for
@@ -45,7 +50,7 @@ certificates to be stored. This is probably the safest option as it ensures any 
 ### PHP
 `:[<version>-]php` variant of this image bundles PHP-FPM alongside essential php extensions and [composer](https://getcomposer.org). e.g. `:php`, `:0.8.0-php`
 ```sh
-$ docker run -d -p 2015:2015 abiosoft/caddy:php
+$ docker run -d -p 2015:2015 adriel/caddy:php
 ```
 Point your browser to `http://127.0.0.1:2015` and you will see a php info page.
 
@@ -53,12 +58,18 @@ Point your browser to `http://127.0.0.1:2015` and you will see a php info page.
 
 Replace `/path/to/php/src` with your php sources directory.
 ```sh
-$ docker run -d -v /path/to/php/src:/srv -p 2015:2015 abiosoft/caddy:php
+$ docker run -d -v /path/to/php/src:/srv -p 2015:2015 adriel/caddy:php
 ```
 Point your browser to `http://127.0.0.1:2015`.
 
 ##### Note
 Your `Caddyfile` must include the line `startup php-fpm7`. For Caddy to be PID 1 in the container, php-fpm7 could not be started.
+
+### Using Cloudflare
+
+Caddy can talk to Cloudflare via their API to automaticly confugure/update your Let's Encrypt certificates using the Cloudflare plug (which has been included in this image).
+
+Follow the [instrutions here](https://caddyserver.com/docs/automatic-https#enabling-the-dns-challenge) to set it up.
 
 ### Using git sources
 
@@ -66,10 +77,10 @@ Caddy can serve sites from git repository using [git](https://caddyserver.com/do
 
 ##### Create Caddyfile
 
-Replace `github.com/abiosoft/webtest` with your repository.
+Replace `github.com/adriel/webtest` with your repository.
 
 ```sh
-$ printf "0.0.0.0\nroot src\ngit github.com/abiosoft/webtest" > Caddyfile
+$ printf "0.0.0.0\nroot src\ngit github.com/adriel/webtest" > Caddyfile
 ```
 
 ##### Run the image

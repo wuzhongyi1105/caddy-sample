@@ -15,8 +15,8 @@
 
 <p>More instructions about this image is <a href="//github.com/abiosoft/caddy-docker/blob/master/README.md" target="_blank">here</a>.<p>
 <p>More instructions about Caddy is <a href="//caddyserver.com/docs" target="_blank">here</a>.<p>
-<?php 
-    phpinfo() 
+<?php
+    phpinfo()
 ?>
 </body>
 </html>
