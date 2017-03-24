@@ -5,7 +5,7 @@ LABEL caddy_version="0.9.5" architecture="amd64"
 
 ARG plugins=git,cloudflare
 
-RUN apk add --no-cache openssh-client git tar php7-fpm curl
+RUN apk add --no-cache git tar php7-fpm curl
 
 # essential php libs
 RUN apk add --no-cache php7-curl php7-dom php7-gd php7-ctype php7-zip php7-xml php7-iconv php7-sqlite3 php7-mysqli php7-pgsql php7-json php7-phar php7-openssl php7-pdo php7-pdo_mysql php7-session php7-mbstring php7-bcmath
