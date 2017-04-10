@@ -67,7 +67,7 @@ Your `Caddyfile` must include the line `startup php-fpm7`. For Caddy to be PID 1
 
 ### Using Cloudflare
 
-Caddy can talk to Cloudflare via their API to automaticly confugure/update your Let's Encrypt certificates using the Cloudflare plug (which has been included in this image).
+Caddy can talk to Cloudflare via their API to automaticly confugure/update your Let's Encrypt certificates using the Cloudflare plugin (which has been included in this image).
 
 Follow the [instrutions here](https://caddyserver.com/docs/automatic-https#enabling-the-dns-challenge) to set it up.
 
