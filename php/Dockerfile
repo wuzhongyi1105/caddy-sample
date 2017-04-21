@@ -1,9 +1,9 @@
 FROM alpine:3.5
 MAINTAINER Adriel Kloppenburg
 
-LABEL caddy_version="0.9.5" architecture="amd64"
+LABEL caddy_version="0.10" architecture="amd64"
 
-ARG plugins=git,cloudflare
+ARG plugins=http.git,tls.dns.cloudflare
 
 RUN apk add --no-cache \
         git \
@@ -52,7 +52,7 @@ RUN echo "clear_env = no" >> /etc/php7/php-fpm.conf
 # install caddy
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/build?os=linux&arch=amd64&features=${plugins}" \
+      "https://caddyserver.com/download/linux/amd64?plugins=${plugins}" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
