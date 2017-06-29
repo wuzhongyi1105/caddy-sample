@@ -1,12 +1,12 @@
 # Caddy
 
-A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](http://caddyserver.com/docs/git) plugin.  Plugins can be configured via the `plugins` build arg.
+A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](http://caddyserver.com/docs/git) and [cloudflare](https://github.com/caddyserver/dnsproviders/blob/master/README.md) plugins.  Plugins can also be configured via the `plugins` build arg.
 
 
 
 ### Credit
 
-A bit thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
+A big thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
 
 [![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy)
 ## Getting Started
