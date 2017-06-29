@@ -1,6 +1,6 @@
 # Caddy
 
-A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](https://github.com/abiosoft/caddy-git/blob/master/README.md) and [cloudflare](https://github.com/caddyserver/dnsproviders/blob/master/README.md) plugins.  Plugins can also be configured via the `plugins` build arg.
+A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](https://caddyserver.com/docs/http.git) and [cloudflare](https://caddyserver.com/docs/tls.dns.cloudflare) plugins.  Plugins can also be configured via the `plugins` build arg.
 
 
 
