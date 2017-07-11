@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER Adriel Kloppenburg
 
 LABEL caddy_version="0.10.4" architecture="amd64"
