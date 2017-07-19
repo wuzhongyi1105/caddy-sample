@@ -32,7 +32,8 @@ RUN apk add --no-cache \
         php7-session \
         php7-mbstring \
         php7-bcmath \
-        php7-zlib
+        php7-zlib \
+        php7-tokenizer
 
 # symblink php7 to php
 RUN ln -sf /usr/bin/php7 /usr/bin/php
