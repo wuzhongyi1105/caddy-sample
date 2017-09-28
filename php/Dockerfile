@@ -1,7 +1,7 @@
 FROM alpine:3.6
 MAINTAINER Adriel Kloppenburg
 
-LABEL caddy_version="0.10.8" architecture="amd64"
+LABEL caddy_version="0.10.9" architecture="amd64"
 
 ARG plugins=http.git,tls.dns.cloudflare
 
@@ -53,12 +53,13 @@ RUN echo "clear_env = no" >> /etc/php7/php-fpm.conf
 # install caddy
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/linux/amd64?plugins=${plugins}" \
+      "https://caddyserver.com/download/linux/amd64?plugins=${plugins}&license=personal" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
 
 EXPOSE 80 443 2015
+VOLUME /root/.caddy /srv
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
