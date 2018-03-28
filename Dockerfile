@@ -5,9 +5,6 @@ LABEL caddy_version="0.10.12" architecture="amd64"
 
 ARG plugins=http.git,tls.dns.cloudflare
 
-# Let's Encrypt Agreement
-ENV ACME_AGREE="false"
-
 RUN apk add --no-cache git tar curl
 
 RUN curl --silent --show-error --fail --location \
@@ -25,4 +22,4 @@ COPY Caddyfile /etc/Caddyfile
 COPY index.html /srv/index.html
 
 ENTRYPOINT ["/usr/bin/caddy"]
-CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree=$ACME_AGREE"]
+CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree"]
