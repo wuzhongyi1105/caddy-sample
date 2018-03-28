@@ -25,4 +25,4 @@ COPY Caddyfile /etc/Caddyfile
 COPY index.html /srv/index.html
 
 ENTRYPOINT ["/usr/bin/caddy"]
-CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]
+CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree=$ACME_AGREE"]
