@@ -68,7 +68,7 @@ $ docker run -d -v /path/to/php/src:/srv -p 2015:2015 adriel/caddy:php
 Point your browser to `http://127.0.0.1:2015`.
 
 ##### Note
-Your `Caddyfile` must include the line `startup php-fpm7`. For Caddy to be PID 1 in the container, php-fpm7 could not be started.
+Your `Caddyfile` must include the line `on startup php-fpm7`. For Caddy to be PID 1 in the container, php-fpm7 could not be started.
 
 ### Using Cloudflare
 
