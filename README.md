@@ -14,7 +14,7 @@ Caddy may prompt to agree to [Let's Encrypt Subscriber Agreement](https://letsen
 
 Set it to true to agree, `ACME_AGREE=true`.
 
-###Getting Started
+### Getting Started
 
 ```sh
 $ docker run -d -p 2015:2015 adriel/caddy
