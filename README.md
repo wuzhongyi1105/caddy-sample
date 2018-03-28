@@ -8,8 +8,13 @@ A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This im
 
 A big thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
 
-[![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy)
-## Getting Started
+[![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy) 	 
+### Let's Encrypt Subscriber Agreement
+Caddy may prompt to agree to [Let's Encrypt Subscriber Agreement](https://letsencrypt.org/documents/2017.11.15-LE-SA-v1.2.pdf). This is configurable with `ACME_AGREE` environment variable.
+
+Set it to true to agree, `ACME_AGREE=true`.
+
+###Getting Started
 
 ```sh
 $ docker run -d -p 2015:2015 adriel/caddy
