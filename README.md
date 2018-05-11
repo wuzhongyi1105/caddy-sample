@@ -9,6 +9,9 @@ A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This im
 A big thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
 
 [![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy) 	 
+### Telemetry
+Telemetry has been enabled by default on this image! If you do not want this please use another docker image.
+
 ### Getting Started
 
 ```sh
