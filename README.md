@@ -2,13 +2,16 @@
 
 A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com). This image includes the [git](https://caddyserver.com/docs/http.git) and [cloudflare](https://caddyserver.com/docs/tls.dns.cloudflare) plugins.  Plugins can also be configured via the `plugins` build arg.
 
-
-
 ### Credit
 
 A big thank you to [abiosoft](https://github.com/abiosoft/caddy-docker) whos this image is forked off.
 
 [![](https://images.microbadger.com/badges/image/adriel/caddy.svg)](https://microbadger.com/images/adriel/caddy) 	 
+
+### Telemetry
+
+Telemetry has been enabled by default on this image! If you do not want this please use another docker image.
+
 ### Getting Started
 
 ```sh
