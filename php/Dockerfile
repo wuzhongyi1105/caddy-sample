@@ -1,9 +1,9 @@
-FROM alpine:3.7
+FROM alpine:3.8
 MAINTAINER Adriel Kloppenburg
 
 LABEL caddy_version="0.11.0" architecture="amd64"
 
-ARG plugins=http.git,tls.dns.cloudflare
+ARG plugins=http.filter,http.git,tls.dns.cloudflare
 
 RUN apk add --no-cache \
         git \
