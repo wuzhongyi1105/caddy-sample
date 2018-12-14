@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    background: url("https://source.unsplash.com/random") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.content{
+    position: relative;
+    margin: 8% auto auto auto;
+    width: 40%;
+    padding:40px 50px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.6);  /*背景透明而上面的内容不透明*/
+
+}
+
+.quote i{
+    font-size: 4em;
+    color: rgb(39,174,96);
+}
+
+.quote-content{
+    display: inline;
+    font-size: 2em;
+    color: rgb(39,174,96);
+}
+
+.author{
+    position: relative;
+    text-align: right;
+
+    color: rgb(39,174,96);
+}
+
+.author i{
+    font-size: 4em;
+    color: rgb(39,174,96);
+}
+
+.quote-author{
+    font-size: 1.5em;
+    display: inline;
+}
+
+
+
+.addition{
+    width: 100%;
+    position: relative;
+}
+.addition center{
+    position: relative;
+}
+
+.btn_next{
+    padding:5px 10px;
+    font-size: 1.5em;
+    color: #fff;
+    background: rgb(39,174,96);
+
+    border: 0;
+}
+.btn_next:blur{
+    color: #fff;
+}
+
+
+.addition .shareQQ{
+    position: relative;
+    color: #ccc;
+    font-size: 2em;
+}
+.addition .shareQQ:hover{
+    color: rgb(39,174,96);
+
+}
+.addition a{
+    position: relative;
+    text-align: right;
+}
+.share{
+    position: relative;
+    text-align: right;
+}
+/*背景透明，字体不透明，兼容 IE6/7/8  参考网址：http://www.cnblogs.com/PeunZhang/p/4089894.html*/
+@media \0screen\,screen\9{
+    /*只支持IE6/7/8*/
+    .content{
+        background-color: #fff;
+        filter:Alpha(opacity=50);
+        position: static;/* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+        *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+    }
+
+    /*必须设置为relative，这样可以使它内容不透明*/
+    .content .quote{
+        position: relative;
+    }
+    .content .author{
+        position: relative;
+    }
+}

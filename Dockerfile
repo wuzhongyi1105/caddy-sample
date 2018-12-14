@@ -1,9 +1,19 @@
 FROM alpine:3.8
-MAINTAINER Adriel Kloppenburg
+MAINTAINER DylanWu
 
 LABEL caddy_version="0.11.1" architecture="amd64"
 
-ARG plugins=http.filter,http.git,tls.dns.cloudflare
+ENV DOMAIN=
+ENV PORT_80=80
+ENV PORT_443=443
+ENV EMAIL=
+ENV USER=
+ENV PWD=
+ENV USE_SAMPLE=true
+ENV USE_SIMPLE=false
+EXPOSE 80 443
+
+ARG plugins=http.forwardproxy
 
 RUN apk add --no-cache git tar curl
 
@@ -14,12 +24,11 @@ RUN curl --silent --show-error --fail --location \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
 
-EXPOSE 80 443 2015
-VOLUME /root/.caddy /srv
-WORKDIR /srv
+VOLUME /root/.caddy/acme /srv/docker/certs
+VOLUME /var/www/html /srv/docker/caddy/html
+VOLUME /etc/caddy /srv/docker/caddy
 
-COPY Caddyfile /etc/Caddyfile
-COPY index.html /srv/index.html
+COPY html /srv/docker/caddy/html
 
-ENTRYPOINT ["/usr/bin/caddy"]
-CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree"]
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
