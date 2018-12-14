@@ -19,16 +19,12 @@ else
 fi
 
 dir=$(find /root/.caddy/acme -name $DOMAIN -type d -print)
-
-for dir in /root/.caddy/acme/*
- do
-   if [ -d $dir ]
-   then
-    CRT="${dir}/${DOMAIN}.crt"
-    KEY="${dir}/${DOMAIN}.key"
-    cp $CRT /root/.caddy/acme
-    cp $KEY /root/.caddy/acme
-  fi
-done
+if [ -d $dir ]
+then
+  CRT="${dir}/${DOMAIN}.crt"
+  KEY="${dir}/${DOMAIN}.key"
+  cp $CRT /root/.caddy/acme
+  cp $KEY /root/.caddy/acme
+fi
 
 /usr/bin/caddy --conf /etc/caddy/Caddyfile --log stdout --agree
