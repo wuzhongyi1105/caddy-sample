@@ -24,9 +24,9 @@ RUN curl --silent --show-error --fail --location \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
 
-VOLUME /root/.caddy/acme /srv/docker/certs
-VOLUME /var/www/html /srv/docker/caddy/html
-VOLUME /etc/caddy /srv/docker/caddy
+VOLUME /root/.caddy/acme
+VOLUME /var/www/html
+VOLUME /etc/caddy
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
