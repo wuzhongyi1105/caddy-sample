@@ -19,6 +19,8 @@ else
 	printf "$DOMAIN\ngzip\nlog stdout\nerrors stdout\nroot /var/www/html\n \nforwardproxy {\n    basicauth $USER $PWD\n    ports     $PORT_80 $PORT_443\n    hide_ip\n    hide_via\n    probe_resistance\n    response_timeout 30\n    dial_timeout     30\n}" > /etc/caddy/Caddyfile
 fi
 
+/usr/bin/caddy --conf /etc/caddy/Caddyfile --log stdout --agree
+
 dir=$(find /root/.caddy/acme -name $DOMAIN -type d -print)
 if [ -d $dir ]
 then
@@ -27,5 +29,3 @@ then
   cp $CRT /root/.caddy/acme
   cp $KEY /root/.caddy/acme
 fi
-
-/usr/bin/caddy --conf /etc/caddy/Caddyfile --log stdout --agree
