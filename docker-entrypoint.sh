@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mkdir /var/www/html
 if [ "$USE_SIMPLE" = "false" ]; then
 	if [ "$USE_SAMPLE" = "true" ]; then
     	echo 'Generating SSL for ' $DOMAIN
