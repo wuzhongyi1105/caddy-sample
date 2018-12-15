@@ -15,7 +15,7 @@ EXPOSE 80 443
 
 ARG plugins=http.forwardproxy
 
-RUN apk add --no-cache git tar curl
+RUN apk add --no-cache git tar curl unzip
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
