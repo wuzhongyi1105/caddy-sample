@@ -28,7 +28,7 @@ VOLUME /root/.caddy/acme /srv/docker/certs
 VOLUME /var/www/html /srv/docker/caddy/html
 VOLUME /etc/caddy /srv/docker/caddy
 
-COPY html /srv/docker/caddy/html
+COPY html /var/www/html
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
