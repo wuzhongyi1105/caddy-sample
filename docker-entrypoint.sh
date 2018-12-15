@@ -17,7 +17,7 @@ else
 	echo 'Generating SSL for ' $DOMAIN
 	echo 'Generating Website for ' $DOMAIN
 	echo 'Generating the Hole of ' $DOMAIN ' and remember Big Brother is watching you'
-	printf "$DOMAIN\ngzip\nlog stdout\nerrors stdout\nroot /var/www/html\n \nforwardproxy {\n    basicauth $USER $PWD\n    ports     $PORT_80 $PORT_443\n    hide_ip\n    hide_via\n    probe_resistance\n    response_timeout 30\n    dial_timeout     30\n}" > /etc/caddy/Caddyfile
+	printf "$DOMAIN\ngzip\nlog stdout\nerrors stdout\nroot /var/www/html\n \nforwardproxy {\n    basicauth $USER ${PWD}\n    ports     $PORT_80 $PORT_443\n    hide_ip\n    hide_via\n    probe_resistance\n    response_timeout 30\n    dial_timeout     30\n}" > /etc/caddy/Caddyfile
 fi
 
 /usr/bin/caddy --conf /etc/caddy/Caddyfile --log stdout --agree
