@@ -25,6 +25,8 @@ fi
 
 /usr/bin/caddy --conf /etc/caddy/Caddyfile --log stdout --agree
 
+sleep 10
+
 dir=$(find /root/.caddy/acme -name $DOMAIN -type d -print)
 if [ -d $dir ]
 then
