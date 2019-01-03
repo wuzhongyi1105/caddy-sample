@@ -19,6 +19,35 @@ $ docker run -d -p 2015:2015 adriel/caddy
 
 Point your browser to `http://127.0.0.1:2015`.
 
+ENV DOMAIN=your.domain
+ENV PORT_80=80
+ENV PORT_443=443
+ENV EMAIL=you@your.addr
+ENV USER=username
+ENV PASSWORD=pass
+ENV USE_SAMPLE=true
+ENV USE_SIMPLE=false
+
+EMAIL 
+Your email for tls cert, Optional.
+
+
+USER
+Username for HTTPS proxy.
+
+
+PASSWORD
+Password for HTTPS proxy.
+
+
+USE_SAMPLE
+Generate a random website.
+
+
+USE_SIMPLE
+Enable proxy behind website.
+
+
 > Be aware! If you don't bind mount the location certificates are saved to, you may hit Let's Encrypt rate [limits](https://letsencrypt.org/docs/rate-limits/) rending further certificate generation or renewal disallowed (for a fixed period)! See "Saving Certificates" below!
 
 ### Saving Certificates
