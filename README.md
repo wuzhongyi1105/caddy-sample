@@ -20,13 +20,21 @@ $ docker run -d -p 2015:2015 adriel/caddy
 Point your browser to `http://127.0.0.1:2015`.
 
 ENV DOMAIN=your.domain
+
 ENV PORT_80=80
+
 ENV PORT_443=443
+
 ENV EMAIL=you@your.addr
+
 ENV USER=username
+
 ENV PASSWORD=pass
+
 ENV USE_SAMPLE=true
+
 ENV USE_SIMPLE=false
+
 
 EMAIL 
 Your email for tls cert, Optional.
