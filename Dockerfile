@@ -1,7 +1,7 @@
 FROM alpine:3.8
 MAINTAINER DylanWu
 
-LABEL caddy_version="0.11.1" architecture="amd64"
+LABEL caddy_version="1.0.3" architecture="amd64"
 
 ENV DOMAIN=
 ENV PORT_80=80
